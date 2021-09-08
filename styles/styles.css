@@ -1,0 +1,293 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow:wght@600;800&family=Fraunces:wght@700;900&display=swap');
+
+.attribution {
+    font-size: 11px;
+    text-align: center;
+}
+
+.attribution a {
+    color: hsl(228, 45%, 44%);
+}
+
+:root{
+    --Soft_red: hsl(7, 99%, 70%);
+    --Yellow: hsl(51, 100%, 49%);
+    --Dark_desaturated_cyan: hsl(167, 40%, 24%); /*? graphic design text */
+    --Dark_blue: hsl(198, 62%, 26%); /*? photography text */
+    --Dark_moderate_cyan: hsl(168, 34%, 41%); /*? footer  */
+
+    --Very_dark_desaturated_blue: hsl(212, 27%, 19%);
+    --Very_dark_grayish_blue: hsl(213, 9%, 39%);
+    --Dark_grayish_blue: hsl(232, 10%, 55%);
+    --Grayish_blue: hsl(210, 4%, 67%);
+    --White: hsl(0, 0%, 100%);
+
+    /* *FONTS */
+    --Barlow: 'Barlow', sans-serif;
+    --Fraunces: 'Fraunces', serif;
+}
+/* *** GLOBAL *** */
+html {
+    font-size: 62.5%;
+    box-sizing: border-box;
+    font-family: var(--Barlow);
+}
+
+*,*::after,*::before{
+    box-sizing: inherit;
+}
+
+body {
+    font-size: 1.8rem;
+}
+img{
+    max-width: 100%;
+}
+h1, h2, h3, P{
+    margin: 0;
+}
+a{
+    text-decoration: none;
+}
+blockquote{
+    margin: 0;
+    text-align: center;
+    font-size: 1.8rem;
+    line-height: 3.2rem;
+    color: var(--Very_dark_desaturated_blue);
+}
+.container{
+    padding: 6rem 2.4rem;
+}
+
+.header{
+    
+    width: 100%;
+    z-index: 100;
+}
+.nav{
+    position: absolute;
+    left: 2.4rem;
+    right: 2.4rem;
+    height: 9rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.nav__list{
+    position: absolute;
+    top: -500%;
+    left: 0;
+    right: 0;
+    padding: 2rem;
+    margin: 0;
+    background-color: var(--White);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* gap: 4rem; */
+    z-index: 101;
+    transition: .3s top ease-in-out;
+}
+.nav__list::after{
+    content: '';
+    position: absolute;
+    clip-path: polygon(100% 0, 0 100%, 100% 100%);
+    width: 2.4rem;
+    height: 2.4rem;
+    background-color: var(--White);
+    right: 0;
+    top: -2.4rem;
+    
+}
+.nav__list.active{
+    top: 10rem;
+}
+.nav__item{
+    list-style: none;
+}
+.nav__link{
+    display: inline-block;
+    padding: 2rem 0;
+    color: var(--Very_dark_grayish_blue);
+    transition: .3s color ease;
+}
+.nav__link:hover{
+    color: var(--Grayish_blue);
+}
+.nav__toggle{
+    cursor: pointer;
+}
+.nav__item:last-of-type .nav__link{
+    text-transform: uppercase;
+    font-family: var(--Fraunces);
+    font-weight: 900;
+    font-size: 1.4rem;
+    background-color: var(--Yellow);
+    padding: 2rem 3rem;
+    margin: 2rem 0;
+    border-radius: 4rem;
+}
+
+/* *** HERO *** */
+.hero{
+    background-image: url(../images/mobile/image-header.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.hero__title{
+    color: var(--White);
+    text-transform: uppercase;
+    font-family: var(--Fraunces);
+    font-weight: 900;
+    font-size: 4rem;
+    text-align: center;
+    letter-spacing: .72rem;
+    margin-bottom: 6rem;
+}
+/* *** SERVICES *** */
+.service__title{
+    font-family: var(--Fraunces);
+    font-size: 3.2rem;
+    font-weight: 900;
+    letter-spacing: .064rem;
+    text-align: center;
+    color: var(--Very_dark_desaturated_blue);
+}
+.service__text{
+    text-align: center;
+    font-size: 1.8rem;
+    line-height: 3rem;
+    color: var(--Dark_grayish_blue);
+    margin: 3rem 0;
+}
+.btn{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    font-size: 1.6rem;
+    font-family: var(--Fraunces);
+    text-transform: uppercase;
+    font-weight: 900;
+    letter-spacing: 0.032rem;
+    color: var(--Very_dark_desaturated_blue);
+
+}
+.btn::before{
+    content: '';
+    position: absolute;
+    width: 13.5rem;
+    height: 1rem;
+    background-color: var(--Yellow);
+    border-radius: .5rem;
+    bottom: -.2rem;
+    z-index: -1;
+    opacity: .4;
+}
+.btn-rose::before{
+    background-color: var(--Soft_red);
+}
+.graphic{
+    min-height: 60rem;
+    background-image: url(../images/mobile/image-graphic-design.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: flex-end;
+}
+.graphic:last-of-type{
+    background-image: url(../images/mobile/image-photography.jpg);
+}
+.graphic__content{
+    text-align: center;
+    color: var(--Dark_desaturated_cyan);
+}
+.graphic__title{
+    font-family: var(--Fraunces);
+    font-weight: 900;
+    font-size: 2.8rem;
+    text-transform: capitalize;
+    letter-spacing: .056rem;
+    
+}
+.graphic__text{
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: 600;
+    line-height: 3rem;
+    letter-spacing: .03rem;
+    margin: 3rem 0 0 0;
+}
+.graphic:last-of-type .graphic__content{
+    color: var(--Dark_blue);
+}
+/* *** CLIENT TESTIMONIALS *** */
+.testimonials__title {
+    text-align: center;
+    text-transform: uppercase;
+    font-family: var(--Fraunces);
+    font-size: 1.5rem;
+    font-weight: 900;
+    letter-spacing: 0.5rem;
+    color: var(--Grayish_blue);
+}
+.card{
+    margin-top: 6rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 4rem;
+}
+.card__img{
+    width: 7.2rem;
+    height: 7.2rem;
+    border-radius: 50%;
+    overflow: hidden;
+}
+.card__author{
+    font-family: var(--Fraunces);
+    font-size: 1.8rem;
+    font-weight: 900;
+    margin-bottom: 1.5rem;
+}
+.card__authorPosition{
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: var(--Grayish_blue);
+}
+/* *** PROJECTS *** */
+.projects{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+/* *** FOOTER *** */
+.footer{
+    background-color: #90D4C5;
+    text-align: center;
+    
+}
+.footer__img img{
+    width: 17rem;
+}
+.footer__nav{
+    display: flex;
+    justify-content: space-between;
+    margin: 3rem 0 6rem 0;
+}
+.footer__nav a{
+    font-size: 1.8rem;
+    color: var(--Dark_moderate_cyan);
+}
+.social a{
+    display: inline-block;
+    padding: 2rem 1rem;
+}
