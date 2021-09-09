@@ -60,7 +60,6 @@ blockquote{
     color: var(--Very_dark_desaturated_blue);
 }
 .container{
-    max-width: 144rem;
     padding: 6rem 2.4rem;
 }
 
@@ -222,11 +221,11 @@ blockquote{
         margin-bottom: 9.5rem;
     }
     .hero__img{
-        margin-bottom: 10rem;
+        margin-bottom: 11rem;
     }
 }
 /* *** SERVICES *** */
-.service{
+.service{    
     display: flex;
     flex-direction: column;
 }
@@ -289,7 +288,6 @@ blockquote{
     background-image: url(../images/mobile/image-photography.jpg);
 }
 .graphic__content{
-    text-align: center;
     color: var(--Dark_desaturated_cyan);
 }
 .graphic__title{
@@ -298,6 +296,7 @@ blockquote{
     font-size: 2.8rem;
     text-transform: capitalize;
     letter-spacing: .056rem;
+    text-align: center;
     
 }
 .graphic__text{
@@ -311,8 +310,11 @@ blockquote{
 .graphic:last-of-type .graphic__content{
     color: var(--Dark_blue);
 }
+
 @media (min-width: 768px) {
     .services{
+        max-width: 144rem;
+        margin: 0 auto;
         display: grid;
         align-items: center;
         justify-items: center;
@@ -328,15 +330,15 @@ blockquote{
     .service{
         max-width: 45rem;
         align-items: flex-start;
-        padding: 0;
+        padding: 2.4rem;
     }
     .service__title {        
-        font-size: 4rem;
+        font-size: 2.5rem;
         letter-spacing: .08rem;
         text-align: left;
     }
     .service__text {
-        margin: 4rem 0;
+        margin: 2rem 0;
         text-align: left;
     }
     .btn{
@@ -352,6 +354,15 @@ blockquote{
     .graphic__content{
         max-width: 34rem;
         padding: 0 0 6rem 0;
+    }
+}
+@media (min-width: 992px) {
+    .service__title {
+        font-size: 4rem;
+    }
+
+    .service__text {
+        margin: 4rem 0;
     }
 }
 
@@ -392,10 +403,12 @@ blockquote{
 }
 @media (min-width: 768px) {
     .testimonials{
+        max-width: 144rem;
+        margin: 0 auto;
         padding: 15rem 2.4rem;
         display: grid;
         justify-content: center;
-        grid-template-columns: repeat(3, 35rem);
+        grid-template-columns: repeat(auto-fit, minmax(min-content, 35rem));
         gap: 4rem;
     }
     .testimonials__title {
@@ -419,6 +432,7 @@ blockquote{
 }
 /* *** FOOTER *** */
 .footer{
+    width: 100%;
     background-color: #90D4C5;
     text-align: center;
     
