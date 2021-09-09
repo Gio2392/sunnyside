@@ -80,7 +80,7 @@ blockquote{
     align-items: center;
 }
 .nav__logo img{
-    width: 17rem;
+    width: 13rem;
 }
 .nav__list{
     position: fixed;
@@ -142,6 +142,9 @@ blockquote{
         left: 4rem;
         right: 4rem;
         height: 13rem;
+    }
+    .nav__logo img {
+        width: 17rem;
     }
     .nav__list{
         position: relative;
