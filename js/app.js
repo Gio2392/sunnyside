@@ -1,8 +1,18 @@
-const d = document,
-    $toggle = d.getElementById('nav__toggle'),
-    $menu = d.querySelector('.nav__list');
+const d = document;
 
 
-$toggle.addEventListener('click', () => {
-    $menu.classList.toggle('active');
+d.addEventListener("DOMContentLoaded", (e) => {
+    toggle("#nav__toggle", ".nav__list", ".nav__link");
 });
+
+function toggle (toggle, menu, link){
+
+    d.addEventListener("click", (e) => {
+        if(e.target.matches(toggle) || e.target.matches(`${toggle} *`)){
+            d.querySelector(menu).classList.toggle("active");
+        }
+        if(e.target.matches(link)){
+            d.querySelector(menu).classList.remove("active");
+        }
+    })
+}
