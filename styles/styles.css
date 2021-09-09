@@ -470,3 +470,34 @@ blockquote{
 .social a:hover path{
     fill: white;
 }
+
+/* *** BTN SCROLL *** */
+
+.btn__scroll{
+    position: fixed;
+    width: 4rem;
+    height: 4rem;
+    right: 4rem;
+    bottom: 4rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;    
+    border: none;
+    border-radius: 50%;
+    background-color: var(--Yellow);
+    outline: none;
+    transition: all .3s ease-in-out;
+    cursor: pointer;
+}
+.btn__scroll::after{
+    content: '';
+    position: absolute;
+    width: 2rem;
+    height: 2rem;
+    clip-path: polygon(50% 25%, 0 75%, 100% 75%);
+    background-color: white;
+
+}
+.btn__scroll.hidden{
+    right: -100%;
+}
