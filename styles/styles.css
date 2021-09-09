@@ -79,6 +79,9 @@ blockquote{
     justify-content: space-between;
     align-items: center;
 }
+.nav__logo img{
+    width: 17rem;
+}
 .nav__list{
     position: fixed;
     top: -500%;
